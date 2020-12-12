@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>SFS Blueprint Mover</title>
+		<style type="text/css">
+		h1
+		{
+			text-align: center;
+			font-size: 6vw;
+		}
+		p
+		{
+			text-align: center;
+			margin: 0.2vw;
+			font-size: 2vw;
+			overflow-wrap: normal;
+		}
+		input
+		{
+			display: block;
+			font-size: 5vw;
+			padding: 5vw;
+			margin: 5vw;
+		}
+		pre
+		{
+			display: block;
+			font-size: 2vw;
+		}
+		button
+		{
+			display: block;
+			text-alignment: center;
+			font-size: 5vw;
+			padding: 5vw;
+			margin: 5vw;
+		}
+		textarea
+		{
+			display: block;
+			font-family: Courier;
+			font-size: 1vw;
+			width: 100vw
+		}
+		</style>
+	</head>
+	<body>
+		<h1>SFS Blueprint Mover</h1>
+		<p>
+			This website moves SFS blueprints around the build area. Select the Blueprint.txt file to edit, Then enter the distance along the X and y axis that you want your BP to move. The new Blueprint.txt file should appear in the textbox below. Keep in mind that this is experimental and likely contains many bugs; you should always back up your blueprints before using this tool.
+		</p>
+		<input type="file" name="inputfile" id="inputfile">
+		<pre>X offset</pre>
+		<input type="number" id="xoffset" min=-100000 max=100000 step=1 value=0>
+		<pre>Y offset</pre>
+		<input type="number" id="yoffset" min=-100000 max=100000 step=1 value=0>
+		<button id="genbutton">Generate new BP!</button>
+		<button id="copybutton">Copy Blueprint to Clipboard</button>
+		<hr>
+		<textarea readonly id="output" rows=10000>Transformed blueprint appears here...</textarea>
+	</body>
+	<script type="application/javascript" src="app.js"></script>
+</html>
